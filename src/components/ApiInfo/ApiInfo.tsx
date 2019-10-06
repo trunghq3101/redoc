@@ -36,40 +36,45 @@ export class ApiInfo extends React.Component<ApiInfoProps> {
     const downloadLink = info.downloadLink;
 
     const license =
+      // TODO: replace with the localized solution
       (info.license && (
         <InfoSpan>
-          License: <a href={info.license.url}>{info.license.name}</a>
+          لایسنس: <a href={info.license.url}>{info.license.name}</a>
         </InfoSpan>
       )) ||
       null;
 
     const website =
+      // TODO: replace with the localized solution
       (info.contact && info.contact.url && (
         <InfoSpan>
-          URL: <a href={info.contact.url}>{info.contact.url}</a>
+          آدرس: <a href={info.contact.url}>{info.contact.url}</a>
         </InfoSpan>
       )) ||
       null;
 
     const email =
+      // TODO: replace with the localized solution
       (info.contact && info.contact.email && (
         <InfoSpan>
-          {info.contact.name || 'E-mail'}:{' '}
+          {info.contact.name || 'ایمیل'}:{' '}
           <a href={'mailto:' + info.contact.email}>{info.contact.email}</a>
         </InfoSpan>
       )) ||
       null;
 
     const terms =
+      // TODO: replace with the localized solution
       (info.termsOfService && (
         <InfoSpan>
-          <a href={info.termsOfService}>Terms of Service</a>
+          <a href={info.termsOfService}>قوانین و شزایط</a>
         </InfoSpan>
       )) ||
       null;
 
     const version = (info.version && <span>({info.version})</span>) || null;
 
+    // TODO: replace with the localized solution
     return (
       <Section>
         <Row>
@@ -79,14 +84,14 @@ export class ApiInfo extends React.Component<ApiInfoProps> {
             </ApiHeader>
             {!hideDownloadButton && (
               <p>
-                Download OpenAPI specification:
+                دانلود اطلاعات OpenApi :
                 <DownloadButton
                   download={downloadFilename}
                   target="_blank"
                   href={downloadLink}
                   onClick={this.handleDownloadClick}
                 >
-                  Download
+                  دانلود
                 </DownloadButton>
               </p>
             )}

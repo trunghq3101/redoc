@@ -102,6 +102,7 @@ const defaultTheme: ThemeInterface = {
     fontFamily: 'Roboto, sans-serif, Vazir',
     smoothing: 'antialiased',
     optimizeSpeed: true,
+    direction: 'rtl',
     headings: {
       fontFamily: 'Montserrat, sans-serif, Vazir',
       fontWeight: '400',

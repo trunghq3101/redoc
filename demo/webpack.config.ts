@@ -161,7 +161,7 @@ export default (env: { playground?: boolean; bench?: boolean } = {}, { mode }) =
     ignore(/js-yaml\/dumper\.js$/),
     ignore(/json-schema-ref-parser\/lib\/dereference\.js/),
     ignore(/^\.\/SearchWorker\.worker$/),
-    new CopyWebpackPlugin(['demo/openapi.yaml']),
+    new CopyWebpackPlugin(['demo/openapi-fa.yaml']),
   ],
 });
 

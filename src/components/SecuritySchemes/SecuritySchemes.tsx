@@ -29,7 +29,7 @@ export class OAuthFlow extends React.PureComponent<OAuthFlowProps> {
         <td>
           {type === 'implicit' || type === 'authorizationCode' ? (
             <div>
-              <strong> Authorization URL: </strong>
+              <strong> آدرس احراز هویت: </strong>
               {(flow as any).authorizationUrl}
             </div>
           ) : null}
@@ -46,7 +46,7 @@ export class OAuthFlow extends React.PureComponent<OAuthFlowProps> {
             </div>
           )}
           <div>
-            <strong> Scopes: </strong>
+            <strong> اسکوپ ها: </strong>
           </div>
           <ul>
             {Object.keys(flow!.scopes).map(scope => (
@@ -80,7 +80,7 @@ export class SecurityDefs extends React.PureComponent<SecurityDefsProps> {
               <table className="security-details">
                 <tbody>
                   <tr>
-                    <th> Security scheme type: </th>
+                    <th> نوع اسکیمای امنیتی: </th>
                     <td> {AUTH_TYPES[scheme.type] || scheme.type} </td>
                   </tr>
                   {scheme.apiKey ? (
