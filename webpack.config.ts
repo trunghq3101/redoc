@@ -98,6 +98,7 @@ export default (env: { standalone?: boolean } = {}, { mode }) => ({
                 decoratorsBeforeExport: true,
               },
               plugins: [
+                '@babel/plugin-proposal-optional-chaining',
                 ['@babel/plugin-syntax-typescript', { isTSX: true }],
                 ['@babel/plugin-syntax-decorators', { legacy: true }],
                 '@babel/plugin-syntax-jsx',

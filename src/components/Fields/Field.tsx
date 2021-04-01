@@ -37,12 +37,17 @@ export class Field extends React.Component<FieldProps> {
   onFieldChange = e => {
     console.log('Textfield value is ' + e.target.placeholder + ' - ' + e.target.value);
     this.props.field.setValue(e.target.value);
+    console.log(this.props.field);
   };
 
   render() {
     const { className, field, isLast } = this.props;
     const { name, expanded, deprecated, required, kind } = field;
     const withSubSchema = !field.schema.isPrimitive && !field.schema.isCircular;
+
+    if (name === 'shipDate') {
+      console.log(field);
+    }
 
     const paramName = withSubSchema ? (
       <ClickablePropertyNameCell
@@ -59,12 +64,12 @@ export class Field extends React.Component<FieldProps> {
         {required && <RequiredLabel> required </RequiredLabel>}
       </ClickablePropertyNameCell>
     ) : (
-        <PropertyNameCell className={deprecated ? 'deprecated' : undefined} kind={kind} title={name}>
-          <PropertyBullet />
-          {name}
-          {required && <RequiredLabel> required </RequiredLabel>}
-        </PropertyNameCell>
-      );
+      <PropertyNameCell className={deprecated ? 'deprecated' : undefined} kind={kind} title={name}>
+        <PropertyBullet />
+        {name}
+        {required && <RequiredLabel> required </RequiredLabel>}
+      </PropertyNameCell>
+    );
 
     return (
       <>
@@ -73,9 +78,11 @@ export class Field extends React.Component<FieldProps> {
           <PropertyDetailsCell>
             <FieldDetails {...this.props} />
           </PropertyDetailsCell>
-          {field && field.in === 'path' &&
-            <td><TextField placeholder={field.name} onChange={this.onFieldChange} /></td>
-          }
+          {field && (
+            <td>
+              <TextField placeholder={field.name} onChange={this.onFieldChange} />
+            </td>
+          )}
         </tr>
         {field.expanded && withSubSchema && (
           <tr key={field.name + 'inner'}>

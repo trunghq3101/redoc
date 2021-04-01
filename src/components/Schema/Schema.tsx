@@ -29,6 +29,7 @@ export class Schema extends React.Component<Partial<SchemaProps>> {
     if (!schema) {
       return <em> Schema not provided </em>;
     }
+    // console.log(schema);
     const { type, oneOf, discriminatorProp, isCircular } = schema;
 
     if (isCircular) {

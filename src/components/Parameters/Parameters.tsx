@@ -69,6 +69,7 @@ function DropdownWithinHeader(props) {
 
 function BodyContent(props: { content: MediaContentModel; description?: string }): JSX.Element {
   const { content, description } = props;
+
   return (
     <MediaTypesSwitch content={content} renderDropdown={DropdownWithinHeader}>
       {({ schema }) => {
